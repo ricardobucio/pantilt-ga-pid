@@ -1,0 +1,25 @@
+{
+  "camera": {"index": 0, "width": 1280, "height": 720, "crop_w": 480, "crop_h": 360},
+  "hsv": {"h_min": 35, "h_max": 85, "s_min": 80, "s_max": 255, "v_min": 60, "v_max": 255, "min_area": 150},
+  "plant": {
+    "px_per_deg": 9.0, "pan_limits": [-45, 45], "tilt_limits": [-20, 20],
+    "tau": 0.08, "dead_time": 0.04, "max_rate_dps": 300.0
+  },
+  "pid": {
+    "out_limit_deg": 45.0, "d_filter_alpha": 0.3,
+    "lost_hold_s": 0.5, "lost_return_rate_dps": 60.0
+  },
+  "manual_gains": [0.05, 0.15, 0.001, 0.05, 0.15, 0.001],
+  "sim": {
+    "dt": 0.0333, "dt_jitter": 0.004, "duration": 8.0,
+    "noise_px": 2.0, "latency_frames": 1, "dropout_p": 0.02,
+    "settle_band_px": 15, "n_random_walk": 2, "seed": 1234
+  },
+  "ga": {
+    "pop_size": 30, "generations": 40, "stagnation": 10, "tournament_k": 3,
+    "blx_alpha": 0.5, "mut_p": 0.2, "sigma0": 0.15, "sigma_decay": 0.95,
+    "elitism": 2, "seed": 42,
+    "bounds": [[0.0, 0.3], [0.0, 0.5], [0.0, 0.02], [0.0, 0.3], [0.0, 0.5], [0.0, 0.02]]
+  },
+  "fitness_weights": {"itae": 0.35, "iae": 0.15, "settling": 0.15, "oscillation": 0.1, "du": 0.15, "lost": 0.10}
+}
